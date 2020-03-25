@@ -9,6 +9,7 @@
     - `git fetch --all`
     - `git pull origin master`
 5. Run `catkin_make`.
+6. If it doesn't work install these too `sudo apt-get install ros-melodic-joint-state-controller ros-melodic-effort-controllers ros-melodic-position-controllers`
 
 ----
 

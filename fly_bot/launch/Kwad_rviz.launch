@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <launch>
 	<arg name="model" />
 	<param name="robot_description" command="$(find xacro)xacro '$(find fly_bot)/urdf/$(arg model)'" />
