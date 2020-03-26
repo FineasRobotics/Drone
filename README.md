@@ -7,7 +7,7 @@
     - `git init`
     - `git remote add origin https://gitlab.com/fineas-drone-team/drone-repo.git`
     - `git fetch --all`
-    - `git pull origin master`
+    - `git pull origin simulation`
 5. Run `catkin_make`.
 6. If it doesn't work install these too `sudo apt-get install ros-melodic-joint-state-controller ros-melodic-effort-controllers ros-melodic-position-controllers`
 
