@@ -1,3 +1,6 @@
 [submodule "Firmware"]
 	path = Firmware
-	url = https://github.com/PX4/Firmware
+	url = https://github.com/SimPlat/Firmware
+[submodule "Submod"]
+	url = git@github.com:SimPlat/Firmware.git
+	branch = development
