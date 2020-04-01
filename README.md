@@ -1,5 +1,6 @@
 # Drone development
 **Repo Hierarchy**
+```
 │
 ├── drone_ws
 │   ├── .catkin_workspace
@@ -13,9 +14,7 @@
 │       ├── .git
 │       ├── .gitignore
 │       └── .gitmodules
-│
-│
-
+```
 
 ## Instalation Guide
 - Install [docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
