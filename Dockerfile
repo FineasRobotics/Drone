@@ -2,7 +2,7 @@
 # PX4 ROS development environment
 #
 
-FROM px4io/px4-dev-simulation-bionic:2020-01-06
+FROM px4io/px4-dev-simulation-bionic:2020-04-02
 LABEL maintainer="Nuno Marques <n.marques21@hotmail.com>"
 
 ENV ROS_DISTRO melodic
@@ -17,7 +17,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key C1CF6E31E6B
 		libgeographic-dev \
 		libopencv-dev \
 		libyaml-cpp-dev \
-		python-catkin-tools \
+		python-pip \
 		python-tk \
 		ros-$ROS_DISTRO-gazebo-ros-pkgs \
 		ros-$ROS_DISTRO-mav-msgs \
@@ -37,7 +37,14 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key C1CF6E31E6B
 	&& geographiclib-get-geoids egm96-5 \
 	&& apt-get -y autoremove \
 	&& apt-get clean autoclean \
-	&& pip3 install catkin_pkg px4tools pymavlink \
 	&& rm -rf /var/lib/apt/lists/{apt,dpkg,cache,log} /tmp/* /var/tmp/*
+
+# Install everything again for Python 2 because we could not get Firmware
+# to compile using catkin without it.
+RUN pip install wheel setuptools
+RUN pip install argcomplete argparse catkin_pkg catkin-tools cerberus coverage \
+    empy jinja2 matplotlib==2.2.* numpy pkgconfig px4tools pygments pymavlink \
+    packaging pyros-genmsg pyulog pyyaml requests rosdep rospkg serial six toml
+
 
 RUN rosdep init && rosdep update
