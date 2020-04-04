@@ -18,7 +18,7 @@
 
 ## Instalation Guide
 - Install [docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
-- Download and build the image using `docker build .`
+- Download and build the image using `docker build -t drone .`
 - Run image <code> docker run -it --privileged \\
     -v *path to the ws*/drone_ws/:/home/user/drone_ws:rw \\
     -v /tmp/.X11-unix:/tmp/.X11-unix:ro \\
