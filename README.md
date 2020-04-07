@@ -44,6 +44,7 @@
     `curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list`
 
     `sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit`
+    
     `sudo systemctl restart docker`
 - Restart system
 - Optional: 
