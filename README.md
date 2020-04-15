@@ -25,6 +25,8 @@
 
 ### Install Nvidia Docker
 
+Make sure you have Docker v.19.03 or later installed.
+
 1. Install [latest Nvidia proprietary drivers](https://www.nvidia.com/Download/index.aspx) (may require to disable secure boot in bios settings).
 2. Install Nvidia docker:
   ```
