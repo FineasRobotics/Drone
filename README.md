@@ -30,11 +30,11 @@ Make sure you have Docker v.19.03 or later installed.
 1. Install [latest Nvidia proprietary drivers](https://www.nvidia.com/Download/index.aspx) (may require to disable secure boot in bios settings).
 2. Install Nvidia docker:
   ```
-  distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \\
-  curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add - \\
-  curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list \\
-  sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit \\
-  sudo systemctl restart docker \\
+  distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
+  curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add - \
+  curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list \
+  sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit \
+  sudo systemctl restart docker \
   ```
 3. Restart system
 4. (Optional) Run:
@@ -48,12 +48,12 @@ Make sure you have Docker v.19.03 or later installed.
 1. Run image:
 
    ```
-   docker run --gpus all -it --privileged \\
-       -v *path to the ws*/drone_ws/:/home/user/drone_ws:rw \\
-       -v /tmp/.X11-unix:/tmp/.X11-unix:ro \\
-       -e LOCAL_USER_ID="$(id -u)" \\
-       -e DISPLAY=${DISPLAY} \\
-       -p 14570:14570/udp \\
+   docker run --gpus all -it --privileged \
+       -v *path to the ws*/drone_ws/:/home/user/drone_ws:rw \
+       -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
+       -e LOCAL_USER_ID="$(id -u)" \
+       -e DISPLAY=${DISPLAY} \
+       -p 14570:14570/udp \
        --name=drone drone /bin/bash
    ```
 
