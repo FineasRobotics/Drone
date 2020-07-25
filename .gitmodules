@@ -1,0 +1,6 @@
+[submodule "Firmware"]
+	path = Firmware
+	url = https://github.com/SimPlat/Firmware
+[submodule "Submod"]
+	url = https://github.com/SimPlat/Firmware
+	branch = development
