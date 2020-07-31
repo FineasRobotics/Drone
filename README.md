@@ -36,7 +36,7 @@ Make sure you have Docker v.19.03 or later installed.
   sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit \
   sudo systemctl restart docker \
   ```
-3. Restart system
+3. Restart system.
 4. (Optional) Run:
     - `nvidia-smi` to check if the drivers are installed correctly.
     - `docker run --gpus all nvidia/cuda:10.0-base nvidia-smi` to check that hardware acceleration is working.
